@@ -250,7 +250,13 @@
         });
 
 
+      // append the svg obgect to the body of the page
+      // appends a 'group' element to 'svg'
+      // moves the 'group' element to the top left margin2
+
       // Get the data
+      //            d3.csv("dataNew.csv", function(error, data) {
+      //                if (error) throw error;
 
       d3.csv("dateprofit2015c.csv").then(function(data) {
 
@@ -289,14 +295,14 @@
           .attr("transform", "translate(32,0)")
           .data([data])
           .attr("class", "line")
-          .style("stroke", "yellow")
+          .style("stroke", "#1c11b8")
           .attr("d", valueline2);
         // Add the valueline3 path.
         lineChart.append("path")
           .attr("transform", "translate(32,0)")
           .data([data])
           .attr("class", "line")
-          .style("stroke", "orange")
+          .style("stroke", "#ff7b0f")
           .attr("d", valueline3);
 
         // Add the valueline4 path.
@@ -329,7 +335,7 @@
           .attr("transform", "translate(32,0)")
           .data([data])
           .attr("class", "line")
-          .style("stroke", "pink")
+          .style("stroke", "#585a63")
           .attr("d", valueline7);
 
         // Add the valueline8 path.
@@ -342,14 +348,13 @@
         // Add the X Axis
         lineChart.append("g")
           .attr("class", "axis")
-          .attr("transform", "translate(32," + (height2 - padding) + ")")
-          //                    .attr("transform","rotate(-45)")
+          .attr("transform", "translate(22," + (height2 - 20) + ")")
           .call(d3.axisBottom(x));
 
         // Add the Y Axis
         lineChart.append("g")
           .attr("class", "axis")
-          .attr("transform", "translate(" + padding + ",-20)")
+          .attr("transform", "translate(" + padding + ",-15)")
           .call(d3.axisLeft(y));
         //Y Axis label
         lineChart.append("text")
@@ -359,18 +364,49 @@
           .attr("y", 55)
           .attr("transform", "rotate(-90)")
           .text("Profit (in millions)");
+
+
       });
+
     }
 
   </script>
+
 </head>
 
 <body>
   <h1>Top Grossing Broadway Shows 2015</h1>
-  <p> The charts below display data regarding the top grossing Broadway shows that were performed every week during 2015. The line chart contains data of the weekly profit of each Broadway show. You will be able to see how the profit changes for each show throughout the entire year and how the shows' profits compare to one another. The bar chart will show how well each show met their potential profit.</p>
+  <p> The charts below display data regarding the top grossing Broadway shows that were performed every week during 2015. The line chart contains data regarding the weekly profit of each Broadway show. You will be able to see each shows' profit trend throughout the entire year and how these trends compare to one another. The bar chart will then reveal how well each show met their potential profit.</p>
   <section>
     <h2>Top Grossing Broadway Shows</h2>
     <figure id="line-chart"></figure>
+    <svg width="100" height="100" viewBox="0 0 140 100" preserveAspectRatio="none">
+      <text x="-1" y="9" text-anchor="start">Legend</text>
+      <g fill="red">
+        <text x="2" y="20" font-size="smaller" text-anchor="start">Aladdin</text>
+      </g>
+      <g fill="#1c11b8">
+        <text x="2" y="30" font-size="smaller" text-anchor="start">Kinky Boots</text>
+      </g>
+      <g fill="#ff7b0f">
+        <text x="2" y="41" font-size="smaller" text-anchor="start">Les Miserables</text>
+      </g>
+      <g fill="green">
+        <text x="2" y="53" font-size="smaller" text-anchor="start">Matilda</text>
+      </g>
+      <g fill="blue">
+        <text x="2" y="65" font-size="smaller" text-anchor="start">Book of Mormon</text>
+      </g>
+      <g fill="purple">
+        <text x="2" y="77" font-size="smaller" text-anchor="start">Lion King</text>
+      </g>
+      <g fill="#585a63">
+        <text x="2" y="88" font-size="smaller" text-anchor="start">Phantom of the Opera</text>
+      </g>
+      <g fill="brown">
+        <text x="2" y="99" font-size="smaller" text-anchor="start">Wicked</text>
+      </g>
+    </svg>
   </section>
   <section>
     <h2>
@@ -378,14 +414,15 @@
       Gross Potential of Broadway Shows</h2>
     <p>The Gross Potential is the maximum amount a show can possibly earn based on calculations involving ticket prices, seating capacity, and the number of performances. This number is expressed here as a percentage of what could have been achieved (Gross Gross / Gross Potential).</p>
     <p>Click on the bars to select and highlight for easier comparison.</p>
-    <!--        //Hover over any bar to see the Broadway show name and its gross potential percentage. -->
     <figure id="bar-chart"></figure>
-    <!--        <p2>We can notice in the chart above that although these shows were the most profitable in 2015, they could have achieved higher gross values.</p2>-->
   </section>
 
   <section>
     <p>
       Data source: https://corgis-edu.github.io/corgis/json/broadway/
+    </p>
+    <p>
+      Authors: Emily Mohre and Emma Stevenson
     </p>
   </section>
 
