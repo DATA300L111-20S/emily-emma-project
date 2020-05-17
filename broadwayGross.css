@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 html {
   font-size: 120%;
   background-color: #eee;
@@ -18,30 +17,32 @@ h2 {
   color: #239;
 }
 
-/*
 path {
-    stroke: #003f5c;
-    fill: none;
-    stroke-width: 0.25;
+  stroke: black;
+  fill: none;
+  stroke-width: 2px;
 }
-*/
+
 
 line {
   fill: none;
   stroke-width: 1px;
 }
 
-axis path {
-  stroke: black;
-  stroke-width: 1px;
-  fill: none;
-  shape-rendering: crispEdges;
+
+/*
+path {
+    stroke: black;
+    stroke-width: 1px;
+    fill: none;
+    shape-rendering: crispEdges;
 }
 
 tick line {
-  stroke: black;
-  stroke-width: 1px;
+    stroke: black;
+    stroke-width: 1px;
 }
+*/
 
 
 text {
@@ -99,105 +100,3 @@ g.barValues:hover text {
 g.barValues.selected text {
   visibility: visible
 }
-=======
-html {
-    font-size: 120%;
-    background-color: #eee;
-}
-
-svg {
-    background-color: lightgray;
-    border: 1px solid darkgray;
-    padding: 1em;
-    display: inline-block;
-    vertical-align: top;
-}
-
-h1,
-h2 {
-    font-family: "gill sans";
-    color: #239;
-}
-
-/*
-path {
-    stroke: #003f5c;
-    fill: none;
-    stroke-width: 0.25;
-}
-*/
-
-line {
-    fill: none;
-    stroke-width: 1px;
-}
-
-axis path {
-    stroke: black;
-    stroke-width: 1px;
-    fill: none;
-    shape-rendering: crispEdges;
-}
-
-tick line {
-    stroke: black;
-    stroke-width: 1px;
-}
-
-
-text {
-    font-family: sans-serif;
-    font-size: 1px;
-}
-
-body {
-    counter-reset: fignum;
-}
-
-figure {
-    counter-increment: fignum;
-}
-
-figcaption {
-    font-style: italic;
-    margin-top: 0.5em;
-}
-
-figcaption:before {
-    content: "Figure "counter(fignum) ". ";
-}
-
-g.bar rect {
-    stroke: blue;
-    fill: lightblue;
-    stroke-width: 0.1;
-}
-
-
-g.bar:hover rect {
-    fill: gray;
-}
-
-g.bar.selected rect {
-    fill: blue;
-}
-
-g.bar.selected:hover rect {
-    fill: white;
-}
-
-g.barValues text {
-    font-family: sans-serif;
-    fill: #222;
-    visibility: hidden;
-}
-
-
-g.barValues:hover text {
-    visibility: visible
-}
-
-g.barValues.selected text {
-    visibility: visible
-}
->>>>>>> 1985767bb57a6afd22d9b96082d1e5229406ec19
